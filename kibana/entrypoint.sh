@@ -6,6 +6,7 @@ cp /tmp/jhipster-monitor.svg /opt/kibana/optimize/bundles/src/ui/public/images/k
 echo "Waiting for Elasticsearch to startup"
 while true; do
     curl elk-elasticsearch:9200 2>/dev/null && break
+    sleep 1
 done
 
 echo "Loading dashboards"
