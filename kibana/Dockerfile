@@ -1,5 +1,8 @@
 FROM kibana:4.4.1
 
+RUN apt-get update
+RUN apt-get -y install curl
+
 COPY entrypoint.sh /tmp/entrypoint.sh
 COPY kibana.yml /opt/kibana/config/kibana.yml
 COPY jhipster-monitor.svg /tmp/jhipster-monitor.svg
