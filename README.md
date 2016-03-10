@@ -36,18 +36,18 @@ To configure metrics monitoring, enable metrics log reporting in your JHipster a
 
 To start ELK:
 
-    docker-compose -f elk.yml up -d
+    docker-compose up -d
 
 You can now access Kibana at http://localhost:5601
 It should automatically receive logs from your applications.
 
 To stop ELK:
 
-    docker-compose -f elk.yml stop
+    docker-compose stop
 
 Once stopped, you can remove the containers:
 
-    docker-compose -f elk.yml rm
+    docker-compose rm
 
 ### Logstash configuration
 
@@ -65,7 +65,7 @@ In order to trace the origin of logs, before being forwarded to logstash, those 
 
 Add your JSON files in `/kibana/dashboards/` and rebuild the Kibana container to have them automatically loaded in JHipster Monitor:
 
-    docker-compose -f elk.yml build
+    docker-compose build
 
 
 ### Install Kibana plugins
@@ -76,7 +76,7 @@ To install Kibana plugins, modify the `kibana/Dockerfile` and add the following 
 
 Then rebuild the Kibana container:
 
-    docker-compose -f elk.yml build
+    docker-compose build
 
 [JHipster]: https://jhipster.github.io/
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch
