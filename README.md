@@ -85,7 +85,26 @@ Then rebuild the Kibana container:
 
     docker-compose build
 
+## Alerting with Elastalert
+
+### Alerting config
+
+Modify `alerts/config.yaml`, for example change the alerting frequency:
+
+    run_every:
+ 	 minutes: 1
+
+### Write alertings rules
+
+Add new YAML rule files in `alerts/rules` and then test them over past data with:
+
+    ./test-alerting-rule.sh rule.yaml
+
+Note that those YAML files should have a `.yaml` file extension. Read more on how to write rules at [Elastalert's official documentation](https://elastalert.readthedocs.org/en/latest/ruletypes.html)
+
+
 [JHipster]: https://jhipster.github.io/
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch
 [Logstash]: https://www.elastic.co/products/logstash
 [Kibana]: https://www.elastic.co/products/kibana
+[Elastalert]: https://elastalert.readthedocs.org
