@@ -87,6 +87,8 @@ Then rebuild the Kibana container:
 
 ## Alerting with Elastalert
 
+[Elastalert](http://engineeringblog.yelp.com/2015/10/elastalert-alerting-at-scale-with-elasticsearch.html) is an alerting system that can generate alerts from data in Elasticsearch.
+
 ### Alerting config
 
 Modify `alerts/config.yaml`, for example change the alerting frequency:
