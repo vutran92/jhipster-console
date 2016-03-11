@@ -5,7 +5,7 @@ RUN apt-get -y install curl
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 COPY kibana.yml /opt/kibana/config/kibana.yml
-COPY jhipster-monitor.svg /tmp/jhipster-monitor.svg
+COPY jhipster-console.svg /tmp/jhipster-console.svg
 
 COPY dashboards /tmp/dashboards/
 COPY load.sh /tmp/load.sh

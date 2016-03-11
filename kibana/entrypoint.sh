@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cp /tmp/jhipster-monitor.svg /opt/kibana/optimize/bundles/src/ui/public/images/kibana.svg
+cp /tmp/jhipster-console.svg /opt/kibana/optimize/bundles/src/ui/public/images/kibana.svg
 
 # Wait for the Elasticsearch container to be ready before starting Kibana.
 echo "Waiting for Elasticsearch to startup"
@@ -15,4 +15,3 @@ cd /tmp
 
 echo "Starting Kibana"
 exec kibana
-

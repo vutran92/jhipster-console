@@ -1,6 +1,6 @@
 # JHipster Monitor
 
-This is the [JHipster](http://jhipster.github.io/) Monitor, based on the [ELK Stack](https://www.elastic.co/products). It provides a default configuration to get started with logs and metrics monitoring with ELK as well as some nice dashboards.
+This is the [JHipster](http://jhipster.github.io/) Console, based on the [ELK Stack](https://www.elastic.co/products). It provides a default configuration to get started with logs and metrics monitoring with ELK as well as some nice dashboards.
 
 ## Centralized logging and metrics monitoring with ELK
 
@@ -9,7 +9,7 @@ The ELK stack is composed of :
 - [Logstash][] to manage and process the logs
 - [Kibana][] to visualize the logs with a nice interface
 
-The JHipster monitor uses the official Elasticsearch, Logstash and Kibana images. We add only a few visual changes to Kibana and setup some dashboards for you.
+The JHipster Console uses the official Elasticsearch, Logstash and Kibana images. We add only a few visual changes to Kibana and setup some dashboards for you.
 
 ### Configure your applications
 
@@ -51,7 +51,7 @@ Once stopped, you can remove the containers:
 
 ### Logstash configuration
 
-Logstash is configured to listen to syslog messages on UDP port 5000 and forward them to an Elasticsearch instance on it's default port 9200. 
+Logstash is configured to listen to syslog messages on UDP port 5000 and forward them to an Elasticsearch instance on it's default port 9200.
 You can change this behaviour or add inputs and filters for other log formats in `logstash/logstash.conf`.
 
 ### Additional data added to the logs
@@ -63,21 +63,21 @@ In order to trace the origin of logs, before being forwarded to logstash, those 
 
 ### Add new dashboards and visualizations
 
-Add your JSON files in `/kibana/dashboards/` and rebuild the Kibana container to have them automatically loaded in JHipster Monitor:
+Add your JSON files in `/kibana/dashboards/` and rebuild the Kibana container to have them automatically loaded in JHipster Console:
 
     docker-compose build
-    
+
 ### Save your searches, visualization and dashboards as JSON for auto import
 
-Searches, visualization and dashboards created in Kibana can be exported using the _Settings_ > _Objects_ menu. 
-You can extract the JSON description of a specific object under the `_source` field of the export.json file. 
+Searches, visualization and dashboards created in Kibana can be exported using the _Settings_ > _Objects_ menu.
+You can extract the JSON description of a specific object under the `_source` field of the export.json file.
 You can then put this data in a JSON file in one of the `kibana/dashboard` sub-folder for auto-import.
 
 To try out imports without rebuilding the image you can use the `kibana/load-localhost.sh` script.
 
 ### Install Kibana plugins
 
-To install Kibana plugins, modify the `kibana/Dockerfile` and add the following line: 
+To install Kibana plugins, modify the `kibana/Dockerfile` and add the following line:
 
     RUN kibana plugin --install elastic/timelion
 
@@ -89,4 +89,3 @@ Then rebuild the Kibana container:
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch
 [Logstash]: https://www.elastic.co/products/logstash
 [Kibana]: https://www.elastic.co/products/kibana
-
