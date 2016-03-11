@@ -66,7 +66,14 @@ In order to trace the origin of logs, before being forwarded to logstash, those 
 Add your JSON files in `/kibana/dashboards/` and rebuild the Kibana container to have them automatically loaded in JHipster Monitor:
 
     docker-compose build
+    
+### Save your searches, visualization and dashboards as JSON for auto import
 
+Searches, visualization and dashboards created in Kibana can be exported using the _Settings_ > _Objects_ menu. 
+You can extract the JSON description of a specific object under the `_source` field of the export.json file. 
+You can then put this data in a JSON file in one of the `kibana/dashboard` sub-folder for auto-import.
+
+To try out imports without rebuilding the image you can use the `kibana/load-localhost.sh` script.
 
 ### Install Kibana plugins
 
