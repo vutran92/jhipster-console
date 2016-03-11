@@ -1,4 +1,4 @@
-# JHipster Monitor
+# JHipster Console
 
 This is the [JHipster](http://jhipster.github.io/) Console, based on the [ELK Stack](https://www.elastic.co/products). It provides a default configuration to get started with logs and metrics monitoring with ELK as well as some nice dashboards.
 
