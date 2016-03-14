@@ -13,5 +13,7 @@ echo "Loading dashboards"
 cd /tmp
 ./load.sh
 
+[ ! -f /tmp/.initialized ] && echo "Configuring default settings" && curl -XPUT http://elk-elasticsearch:9200/.kibana/config/4.4.1 -d '{"dashboard:defaultDarkTheme": true, "defaultIndex": "logstash-*"}' && touch /tmp/.initialized
+
 echo "Starting Kibana"
 exec kibana
