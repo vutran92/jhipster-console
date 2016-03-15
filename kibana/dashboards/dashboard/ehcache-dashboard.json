@@ -1,5 +1,5 @@
 {
-      "title": "Ehcache dashboard",
+      "title": "ehcache-dashboard",
       "hits": 0,
       "description": "",
       "panelsJSON": "[{\"id\":\"ehcache-hits\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":6,\"size_y\":4,\"col\":1,\"row\":1},{\"id\":\"ehcache-misses\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":1}]",
