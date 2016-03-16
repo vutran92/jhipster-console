@@ -9,7 +9,7 @@ The ELK stack is composed of :
 - [Logstash][] to manage and process the logs
 - [Kibana][] to visualize the logs with a nice interface
 
-The JHipster Console uses the official Elasticsearch, Logstash and Kibana images. We add only a few visual changes to Kibana and setup some dashboards for you.
+The JHipster Console is based on the official Elasticsearch, Logstash and Kibana docker images. We have made a few visual changes to Kibana and setup useful dashboards, so that you can get started to monitor your JHipster apps in minutes.
 
 ### Configure your applications
 
@@ -23,14 +23,13 @@ To configure a JHipster app to forward their logs to ELK, enable logstash loggin
                 port: 5000
                 queueSize: 512
 
-This setup is recommended for a production environment where centralizing logs is very interesting.
-
 To configure metrics monitoring, enable metrics log reporting in your JHipster apps.
 
     jhipster:
-        logs:
-            enabled: false
-            reportFrequency: 60 # seconds
+    	metrics:
+       	    logs:
+           	enabled: true
+            	reportFrequency: 60 # seconds
 
 ### Start or stop ELK with docker
 
@@ -38,7 +37,7 @@ To start ELK:
 
     docker-compose up -d
 
-You can now access Kibana at http://localhost:5601
+You can now access the JHipster Console at http://localhost:5601
 It should automatically receive logs from your applications.
 
 To stop ELK:
@@ -56,42 +55,36 @@ You can change this behaviour or add inputs and filters for other log formats in
 
 ### Additional data added to the logs
 
-In order to trace the origin of logs, before being forwarded to logstash, those are enriched with:
-- the app name: (_spring.application.name_)
-- their port: (_server.port_) (only for microservices and gateway)
-- their eureka instance ID: (_eureka.instance.instanceId_) (only for microservices and gateway)
+In order to trace the origin of logs, those are enriched with:
+- app name: (_spring.application.name_)
+- host: (IP address of the server)
+- port: (_server.port_)
+- instance_name: app_name-host:port
+- eureka instance ID: (_eureka.instance.instanceId_) (only for microservices and gateway)
 
 ### Add new dashboards and visualizations
 
-Add your JSON files in `/kibana/dashboards/` and rebuild the Kibana container to have them automatically loaded in JHipster Console:
+Add your JSON files in `/kibana/dashboards/` and restart the jhipster-console container to have them automatically loaded in JHipster Console:
 
-    docker-compose build
+    docker-compose restart jhipster-console
 
-### Save your searches, visualization and dashboards as JSON for auto import
+### Save your searches, visualization as JSON for auto import
 
 Searches, visualization and dashboards created in Kibana can be exported using the _Settings_ > _Objects_ menu.
 You can extract the JSON description of a specific object under the `_source` field of the export.json file.
 You can then put this data in a JSON file in one of the `kibana/dashboard` sub-folder for auto-import.
 
-To try out imports without rebuilding the image you can use the `kibana/load-localhost.sh` script.
+#### Save your new dashboards 
 
-### Install Kibana plugins
-
-To install Kibana plugins, modify the `kibana/Dockerfile` and add the following line:
-
-    RUN kibana plugin --install elastic/timelion
-
-Then rebuild the Kibana container:
-
-    docker-compose build
+Because Kibana create visualizations IDs after loading them, you might run into issues while trying to save and reload dashboards that come from a different instance of JHipster console. To create new auto-loaded dashboards, first add your new visualizations in `kibana/dashboard/visualization`, then restart kibana and re-create your dashboards in JHipster-console. You can then save those dashboards to JSON files in `kibana/dashboard/dashboards`.
 
 ## Alerting with Elastalert
 
-[Elastalert](http://engineeringblog.yelp.com/2015/10/elastalert-alerting-at-scale-with-elasticsearch.html) is an alerting system that can generate alerts from data in Elasticsearch.
+[Elastalert](https://github.com/Yelp/elastalert) is an alerting system that can generate alerts from data in Elasticsearch.
 
 ### Alerting config
 
-Modify `alerts/config.yaml`, for example change the alerting frequency:
+Modify `alerts/config.yaml`, for example you can change the alerting frequency:
 
     run_every:
  	 minutes: 1
