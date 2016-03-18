@@ -1,10 +1,10 @@
 es_host: elk-elasticsearch
 es_port: 9200
-name: Error logs
+name: Erro- logs
 type: frequency
 index: logstash-*
 # link to a kibana dashboard with correct time settings
-use_kibana4_dashboard: "http://localhost:5601/app/kibana#/dashboard/jhipster-simple-dashboard"
+use_kibana4_dashboard: "http://localhost:5601/app/kibana#/dashboard/monitoring-dashboard"
 num_events: 1
 timeframe:
     minutes: 1
