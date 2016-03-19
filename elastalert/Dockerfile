@@ -1,4 +1,4 @@
-# Elastalert Docker image 
+# Elastalert Docker image
 # Based on tomwganem/docker-elastalert based on ivankrizsan/elastalert
 
 FROM ubuntu:14.04
@@ -41,6 +41,7 @@ RUN python setup.py install && \
 
 COPY ./start-elastalert.sh /opt/start-elastalert.sh
 RUN chmod +x /opt/start-elastalert.sh
+RUN sed -i -e 's/\r$//' /opt/start-elastalert.sh
 
 ENTRYPOINT ["/opt/start-elastalert.sh"]
 CMD ["/usr/bin/python", "-m", "elastalert.elastalert", "--verbose"]
