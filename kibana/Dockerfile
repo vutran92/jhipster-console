@@ -12,6 +12,8 @@ COPY load.sh /tmp/load.sh
 
 RUN chmod +x /tmp/entrypoint.sh
 RUN chmod +x /tmp/load.sh
+RUN sed -i -e 's/\r$//' /tmp/entrypoint.sh
+RUN sed -i -e 's/\r$//' /tmp/load.sh
 
 RUN kibana plugin --install elastic/timelion
 
