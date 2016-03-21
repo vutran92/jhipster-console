@@ -5,8 +5,11 @@ services:
         ports:
             - "9200:9200"
             - "9300:9300"
-        volumes:
-            - ./log-monitoring/log-data:/usr/share/elasticsearch/data
+        # uncomment this section to have elasticsearch data persisted to a volume
+        #volumes:
+        #   - ./log-monitoring/log-data:/usr/share/elasticsearch/data
+        # for Windows, volumes need to be under C:\Users
+        #   - /c/Users/../log-data:/tmp/dashboards
     elk-logstash:
         image: logstash:2.2.2
         volumes:
@@ -18,8 +21,9 @@ services:
         build: kibana/
         ports:
             - "5601:5601"
-        volumes:
-            - ./kibana/dashboards:/tmp/dashboards
+        # uncomment this section to have kibana JSON files automatically loaded from a volume
+        #volumes:
+        #    - ./kibana/dashboards:/tmp/dashboards
     elastalert:
         build: elastalert/
         volumes:
