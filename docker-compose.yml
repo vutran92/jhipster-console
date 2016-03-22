@@ -14,14 +14,16 @@ services:
         image: logstash:2.2.2
         volumes:
             - ./log-monitoring/log-config/:/config-dir
+        # for Windows, copy logstash.conf to a folder under C:\Users
+        #   - /c/Users/../log-config:/config-dir
         command: logstash -f /config-dir/logstash.conf
         ports:
             - "5000:5000/udp"
     jhipster-console:
-        build: kibana/
+        build: jhipster-console/
         ports:
             - "5601:5601"
-        # uncomment this section to enable alerting  
+        # uncomment this section to enable alerting
         #environment:
         #    - ENABLE_ALERTING=true
         #volumes:
@@ -29,4 +31,4 @@ services:
         #    - ./alerts/rules/:/opt/elastalert/rules
 
         # uncomment this section to have kibana JSON files automatically loaded from a volume
-        #    - ./kibana/dashboards:/tmp/dashboards
+        #    - ./jhipster-console/dashboards:/tmp/dashboards
