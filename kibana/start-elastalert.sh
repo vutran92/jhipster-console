@@ -1,5 +1,12 @@
 #!/bin/bash -e
 # Based on https://github.com/krizsan/elastalert-docker
+echo "Starting Alerting"
+
+if ![[ -n "$(cat config.yaml)" && -n "$(cat rules/*.yaml)" ]]
+then
+	echo "Alerting cannot be started. Please set a docker volume for config.yaml and rules/*.yaml and recreate your container"
+	exit
+fi
 
 # Set the timezone.
 if [ "$SET_CONTAINER_TIMEZONE" = "true" ]; then
@@ -30,4 +37,6 @@ else
 	fi
 fi
 
-exec "$@"
+cd /opt/elastalert
+
+python -m elastalert.elastalert --verbose &

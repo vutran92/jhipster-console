@@ -1,6 +1,6 @@
 {
       "title": "Alerting instructions",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"markdown\",\"params\":{\"markdown\":\"Please refer to [JHipster Console's documentation](http://jhipster.github.io/monitoring/#alerting) for instructions on how to set up alerting.\"},\"aggs\":[],\"listeners\":{}}",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"markdown\",\"params\":{\"markdown\":\"Please refer to [JHipster Console's documentation](http://jhipster.github.io/monitoring/#alerting) for instructions on how to set up alerting. You can also try to refresh your browser.\"},\"aggs\":[],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,

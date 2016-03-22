@@ -21,14 +21,12 @@ services:
         build: kibana/
         ports:
             - "5601:5601"
-        # uncomment this section to have kibana JSON files automatically loaded from a volume
+        # uncomment this section to enable alerting  
+        #environment:
+        #    - ENABLE_ALERTING=true
         #volumes:
+        #    - ./alerts/config.yaml:/opt/elastalert/config.yaml
+        #    - ./alerts/rules/:/opt/elastalert/rules
+
+        # uncomment this section to have kibana JSON files automatically loaded from a volume
         #    - ./kibana/dashboards:/tmp/dashboards
-    elastalert:
-        build: elastalert/
-        volumes:
-            - ./alerts/config.yaml:/opt/elastalert/config.yaml
-            - ./alerts/rules/:/opt/elastalert/rules
-        environment:
-            - ELASTICSEARCH_HOST=elk-elasticsearch
-            - ELASTICSEARCH_PORT=9200

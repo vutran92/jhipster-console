@@ -15,5 +15,10 @@ cd /tmp
 
 [ ! -f /tmp/.initialized ] && echo "Configuring default settings" && curl -XPUT http://elk-elasticsearch:9200/.kibana/config/4.4.1 -d '{"dashboard:defaultDarkTheme": true, "defaultIndex": "logstash-*"}' && touch /tmp/.initialized
 
+if [ "$ENABLE_ALERTING" = "true" ]
+then
+/opt/start-elastalert.sh
+fi
+
 echo "Starting Kibana"
 exec kibana

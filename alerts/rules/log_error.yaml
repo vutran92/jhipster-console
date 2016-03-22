@@ -1,6 +1,6 @@
 es_host: elk-elasticsearch
 es_port: 9200
-name: Erro- logs
+name: Error-logs
 type: frequency
 index: logstash-*
 # link to a kibana dashboard with correct time settings
