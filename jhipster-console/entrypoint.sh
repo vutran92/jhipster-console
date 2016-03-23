@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 cp /tmp/jhipster-console.svg /opt/kibana/optimize/bundles/src/ui/public/images/kibana.svg
 
@@ -12,6 +12,13 @@ done
 echo "Loading dashboards"
 cd /tmp
 ./load.sh
+
+[ ! -f /tmp/.initialized ] && echo "Configuring default settings" && curl -XPUT http://elk-elasticsearch:9200/.kibana/config/4.4.1 -d '{"dashboard:defaultDarkTheme": true, "defaultIndex": "logstash-*"}' && touch /tmp/.initialized
+
+if [ "$ENABLE_ALERTING" = "true" ]
+then
+/opt/start-elastalert.sh
+fi
 
 echo "Starting Kibana"
 exec kibana
