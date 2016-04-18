@@ -3,7 +3,7 @@
 # Any .yaml file will be loaded as a rule
 rules_folder: /opt/elastalert/rules
 
-# How often ElastAlert will query elasticsearch
+# How often ElastAlert will query Elasticsearch
 # The unit can be anything from weeks to seconds
 run_every:
   minutes: 1
