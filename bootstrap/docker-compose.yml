@@ -5,15 +5,20 @@ services:
         ports:
             - 9200:9200
             - 9300:9300
+        # uncomment this section to have elasticsearch data persisted to a volume
+        #volumes:
+        #   - ./log-monitoring/log-data:/usr/share/elasticsearch/data
     elk-logstash:
         image: logstash:2.3.0-1
         volumes:
             - ./conf/:/config-dir
+        # for Windows, if it doesn't work, copy logstash.conf to a folder under C:\Users
+        #   - /c/Users/../log-config:/config-dir
         command: logstash -f /config-dir/logstash.conf
         ports:
             - 5000:5000/udp
     jhipster-console:
-        image: jhipster/jhipster-console
+        image: jhipster/jhipster-console:v1.1.0
         ports:
             - 5601:5601
         environment:
