@@ -18,6 +18,8 @@ else
 	flags=""
 fi
 
+cd /opt/elastalert
+
 if ! curl -f $flags ${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT} >/dev/null 2>&1
 then
 	echo "Elasticsearch not available at ${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}"
@@ -30,7 +32,5 @@ else
 	    echo "Elastalert index already exists in Elasticsearch."
 	fi
 fi
-
-cd /opt/elastalert
 
 python -m elastalert.elastalert --verbose &
