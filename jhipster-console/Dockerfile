@@ -13,7 +13,7 @@ RUN sed -i -e 's/\r$//' /tmp/load.sh
 RUN kibana plugin --install elastic/timelion
 
 ENV SET_CONTAINER_TIMEZONE false
-ENV ELASTALERT_VERSION 0.0.77
+ENV ELASTALERT_VERSION 0.0.80
 ENV CONTAINER_TIMEZONE America/Los_Angeles
 ENV ELASTALERT_URL https://github.com/Yelp/elastalert/archive/v${ELASTALERT_VERSION}.tar.gz
 
