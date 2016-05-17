@@ -9,6 +9,9 @@ while true; do
     sleep 1
 done
 
+echo "Creating Mapping for Timelion"
+curl -XPUT http://elk-elasticsearch:9200/.kibana/_mapping/timelion-sheet -d '{"timelion-sheet":{"properties":{"title":{"type":"string"},"hits":{"type":"long"},"description":{"type":"string"},"timelion_sheet":{"type":"string"},"timelion_interval":{"type":"string"},"timelion_other_interval":{"type":"string"},"timelion_chart_height":{"type":"integer"},"timelion_columns":{"type":"integer"},"timelion_rows":{"type":"integer"},"version":{"type":"long"},"kibanaSavedObjectMeta":{"properties":{"searchSourceJSON":{"type":"string"}}}}}}'
+
 echo "Loading dashboards"
 cd /tmp
 ./load.sh
