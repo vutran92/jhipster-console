@@ -1,7 +1,7 @@
 version: '2'
 services:
     elk-elasticsearch:
-        image: elasticsearch:2.3.1
+        image: elasticsearch:2.3.2
         ports:
             - 9200:9200
             - 9300:9300
@@ -9,7 +9,7 @@ services:
         #volumes:
         #   - ./log-monitoring/log-data:/usr/share/elasticsearch/data
     elk-logstash:
-        image: logstash:2.3.0-1
+        image: logstash:2.3.2-1
         volumes:
             - ./conf/:/config-dir
         # for Windows, if it doesn't work, copy logstash.conf to a folder under C:\Users
