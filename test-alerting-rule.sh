@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker exec -it jhipsterconsole_jhipster-console_1 elastalert-test-rule rules/$1
+docker exec -it jhipsterconsole_jhipster-alerter_1 elastalert-test-rule rules/$1
