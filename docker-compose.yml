@@ -1,32 +1,35 @@
 version: '2'
 services:
     elk-elasticsearch:
-        image: elasticsearch:2.3.2
+        build: jhipster-elasticsearch/ 
         ports:
             - "9200:9200"
             - "9300:9300"
-        # uncomment this section to have elasticsearch data persisted to a volume
+        # Uncomment this section to have elasticsearch data loaded from a volume
         #volumes:
-        #   - ./log-monitoring/log-data:/usr/share/elasticsearch/data
+        #   - ./log-data:/usr/share/elasticsearch/data
+
     elk-logstash:
-        image: logstash:2.3.2-1
-        volumes:
-            - ./log-monitoring/log-config/:/config-dir
-        # for Windows, if it doesn't work, copy logstash.conf to a folder under C:\Users
-        #   - /c/Users/../log-config:/config-dir
-        command: logstash -f /config-dir/logstash.conf
+        build: jhipster-logstash/
+        # Uncomment to have logstash config loaded from a volume
+        #volumes:
+        #    - ./jhipster-logstash/conf/:/conf
+        command: logstash -f /conf/logstash.conf
         ports:
             - "5000:5000/udp"
     jhipster-console:
         build: jhipster-console/
         ports:
             - "5601:5601"
-        # uncomment this section to have kibana JSON files automatically loaded from a volume
+        # Uncomment this section to have kibana JSON files loaded from a volume
         #volumes:
         #    - ./jhipster-console/dashboards:/tmp/dashboards
 
+    jhipster-alerter:
+        build: jhipster-alerter/
+        environment:
+            - ENABLE_ALERTING=true
         # uncomment this section to enable alerting
+        #volumes:
         #    - ./alerts/config.yaml:/opt/elastalert/config.yaml
         #    - ./alerts/rules/:/opt/elastalert/rules
-        #environment:
-        #    - ENABLE_ALERTING=true
