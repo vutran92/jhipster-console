@@ -11,7 +11,7 @@ ENV ELASTALERT_URL https://github.com/Yelp/elastalert/archive/v${ELASTALERT_VERS
 ENV ELASTALERT_HOME /opt/elastalert
 ENV RULES_DIRECTORY /opt/elastalert/rules
 
-ENV ELASTICSEARCH_HOST http://elk-elasticsearch
+ENV ELASTICSEARCH_HOST http://jhipster-elasticsearch
 ENV ELASTICSEARCH_PORT 9200
 ENV ELASTICSEARCH_USERNAME ""
 ENV ELASTICSEARCH_PASSWORD ""

@@ -1,6 +1,6 @@
 version: '2'
 services:
-    elk-elasticsearch:
+    jhipster-elasticsearch:
         build: jhipster-elasticsearch/ 
         ports:
             - "9200:9200"
@@ -9,7 +9,7 @@ services:
         #volumes:
         #   - ./log-data:/usr/share/elasticsearch/data
 
-    elk-logstash:
+    jhipster-logstash:
         build: jhipster-logstash/
         # Uncomment to have logstash config loaded from a volume
         #volumes:
@@ -21,6 +21,8 @@ services:
         build: jhipster-console/
         ports:
             - "5601:5601"
+        #environment:
+        #    - ELASTICSEARCH_URL=http://jhipster-elasticsearch:9200    
         # Uncomment this section to have kibana JSON files loaded from a volume
         #volumes:
         #    - ./jhipster-console/dashboards:/tmp/dashboards

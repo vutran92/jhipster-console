@@ -3,7 +3,7 @@
 
 
 # The default value of the variable. Initialize your own variables here
-ELASTICSEARCH=http://elk-elasticsearch:9200
+ELASTICSEARCH=http://jhipster-elasticsearch:9200
 CURL=curl
 KIBANA_INDEX=".kibana"
 

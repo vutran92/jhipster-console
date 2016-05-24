@@ -2,7 +2,7 @@
 # Based on https://github.com/krizsan/elastalert-docker
 echo "Waiting for Elasticsearch to startup"
 while true; do
-    curl elk-elasticsearch:9200 2>/dev/null && break
+    curl ${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT} 2>/dev/null && break
     sleep 1
 done
 echo "Starting Alerting"
@@ -37,5 +37,5 @@ else
 	    echo "Elastalert index already exists in Elasticsearch."
 	fi
 fi
-ls
+
 python -m elastalert.elastalert --verbose
