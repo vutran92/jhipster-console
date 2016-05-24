@@ -27,9 +27,7 @@ services:
 
     jhipster-alerter:
         build: jhipster-alerter/
-        environment:
-            - ENABLE_ALERTING=true
-        # uncomment this section to enable alerting
+        # Uncomment this section to enable alerting
         #volumes:
         #    - ./alerts/config.yaml:/opt/elastalert/config.yaml
         #    - ./alerts/rules/:/opt/elastalert/rules
