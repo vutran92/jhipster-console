@@ -36,5 +36,8 @@ COPY config.yaml /opt/elastalert/
 RUN mkdir /opt/elastalert/rules
 COPY rules/* rules/
 
+VOLUME ["/opt/elastalert/"]
+VOLUME ["/opt/elastalert/rules"]
+
 # Launch Elastalert when a container is started.
 CMD ["/opt/start-elastalert.sh"]

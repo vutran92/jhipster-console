@@ -1,4 +1,4 @@
-FROM kibana:4.5.0
+FROM kibana:4.5.1
 
 RUN apt-get update
 RUN apt-get -y install curl
@@ -16,5 +16,7 @@ RUN kibana plugin --install elastic/timelion
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 RUN sed -i -e 's/\r$//' /entrypoint.sh
+
+VOLUME ["/tmp/dashboards"]
 
 CMD ["/entrypoint.sh"]
