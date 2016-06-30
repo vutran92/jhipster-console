@@ -12,10 +12,11 @@ RUN sed -i -e 's/\r$//' /tmp/load.sh
 
 RUN kibana plugin --install elastic/timelion
 
-
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 RUN sed -i -e 's/\r$//' /entrypoint.sh
+
+ENV ELASTICSEARCH_URL=jhipster-elasticsearch:9200
 
 VOLUME ["/tmp/dashboards"]
 
