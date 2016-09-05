@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt-get -y install curl
 
 ENV SET_CONTAINER_TIMEZONE false
-ENV ELASTALERT_VERSION 0.0.81
+ENV ELASTALERT_VERSION 0.0.95
 ENV CONTAINER_TIMEZONE America/Los_Angeles
 ENV ELASTALERT_URL https://github.com/Yelp/elastalert/archive/v${ELASTALERT_VERSION}.tar.gz
 
