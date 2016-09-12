@@ -1,4 +1,4 @@
-es_host: elk-elasticsearch
+es_host: jhipster-elasticsearch
 es_port: 9200
 name: log_error
 type: frequency
