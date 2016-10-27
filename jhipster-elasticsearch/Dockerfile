@@ -1,3 +1,3 @@
-FROM elasticsearch:2.4.0
+FROM elasticsearch:5.0.0
 
 VOLUME ["/usr/share/elasticsearch/data"]
