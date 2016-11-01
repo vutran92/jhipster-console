@@ -9,12 +9,9 @@ cp /tmp/jhipster-console.svg /usr/share/kibana/optimize/bundles/src/ui/public/im
      sleep 1
  done
 
-# echo "Creating Mapping for Timelion"
-# curl -XPUT http://${ELASTICSEARCH_URL}/.kibana/_mapping/timelion-sheet -d '{"timelion-sheet":{"properties":{"title":{"type":"string"},"hits":{"type":"long"},"description":{"type":"string"},"timelion_sheet":{"type":"string"},"timelion_interval":{"type":"string"},"timelion_other_interval":{"type":"string"},"timelion_chart_height":{"type":"integer"},"timelion_columns":{"type":"integer"},"timelion_rows":{"type":"integer"},"version":{"type":"long"},"kibanaSavedObjectMeta":{"properties":{"searchSourceJSON":{"type":"string"}}}}}}'
-
-# echo "Loading dashboards"
-# cd /tmp
-# ./load.sh
+ echo "Loading dashboards"
+ cd /tmp
+ ./load.sh
 
 [ ! -f /tmp/.initialized ] && echo "Configuring default settings" && curl -XPUT http://${ELASTICSEARCH_URL}/.kibana/config/5.0.0 -d '{"dashboard:defaultDarkTheme": true, "defaultIndex": "logstash-*"}' && touch /tmp/.initialized
 
