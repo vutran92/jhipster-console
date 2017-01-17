@@ -8,10 +8,11 @@ services:
         # Uncomment this section to have elasticsearch data loaded from a volume
         #volumes:
         #   - ./log-data:/usr/share/elasticsearch/data
-        environment:
-            - ES_JAVA_OPTS=-Xms1g -Xmx1g
-            - bootstrap.ignore_system_bootstrap_checks=true
-
+        # Set memlock ulimits to pass bootstrap checks
+        ulimits:
+            memlock:
+                soft: 68719476736
+                hard: 68719476736
     jhipster-logstash:
         build: jhipster-logstash/
         # Uncomment to have logstash config loaded from a volume
