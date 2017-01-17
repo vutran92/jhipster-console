@@ -5,6 +5,10 @@ services:
         ports:
             - 9200:9200
             - 9300:9300
+        ulimits:
+            memlock:
+                soft: 68719476736
+                hard: 68719476736
         # Uncomment this section to have elasticsearch data persisted to a volume
         #volumes:
         #   - ./log-data:/usr/share/elasticsearch/data
