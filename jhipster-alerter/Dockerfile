@@ -1,12 +1,11 @@
-FROM python:2.7-wheezy
+FROM python:2.7-alpine
 
-RUN apt-get update
-RUN apt-get -y install curl
+RUN apk update && apk upgrade && apk add bash curl tar musl-dev linux-headers g++
 
 ENV SET_CONTAINER_TIMEZONE false
-ENV ELASTALERT_VERSION 0.0.95
-ENV CONTAINER_TIMEZONE America/Los_Angeles
-ENV ELASTALERT_URL https://github.com/Yelp/elastalert/archive/v${ELASTALERT_VERSION}.tar.gz
+ENV ELASTALERT_VERSION v0.1.8
+ENV CONTAINER_TIMEZONE Europe/Paris
+ENV ELASTALERT_URL https://github.com/Yelp/elastalert/archive/${ELASTALERT_VERSION}.tar.gz
 
 ENV ELASTALERT_HOME /opt/elastalert
 ENV RULES_DIRECTORY /opt/elastalert/rules
@@ -16,12 +15,11 @@ ENV ELASTICSEARCH_PORT 9200
 ENV ELASTICSEARCH_USERNAME ""
 ENV ELASTICSEARCH_PASSWORD ""
 
-
 RUN mkdir -p /opt/elastalert
 
 RUN curl -Lo elastalert.tar.gz ${ELASTALERT_URL} && \
-    tar xvf *.tar.gz -C ${ELASTALERT_HOME} --strip-components 1 && \
-    rm *.tar.gz
+    tar -xzvf elastalert.tar.gz -C ${ELASTALERT_HOME} --strip-components 1 && \
+    rm elastalert.tar.gz
 
 WORKDIR /opt/elastalert
 
@@ -32,9 +30,8 @@ COPY ./start-elastalert.sh /opt/start-elastalert.sh
 RUN chmod +x /opt/start-elastalert.sh
 #RUN sed -i -e 's/\r$//' /opt/start-elastalert.sh
 
-COPY config.yaml /opt/elastalert/
+COPY ./config.yaml /opt/elastalert/
 RUN mkdir /opt/elastalert/rules
-COPY rules/* rules/
 
 VOLUME ["/opt/elastalert/"]
 VOLUME ["/opt/elastalert/rules"]

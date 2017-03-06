@@ -31,9 +31,9 @@ services:
         #volumes:
         #    - ./jhipster-console/dashboards:/tmp/dashboards
 
-    #jhipster-alerter:
-    #    build: jhipster-alerter/
+    jhipster-alerter:
+        build: jhipster-alerter/
         # Uncomment this section to enable alerting
-        #volumes:
-        #    - ./alerts/config.yaml:/opt/elastalert/config.yaml
-        #    - ./alerts/rules/:/opt/elastalert/rules
+        volumes:
+            #- ./alerts/config.yaml:/opt/elastalert/config.yaml
+            - ./alerts/rules/:/opt/elastalert/rules
