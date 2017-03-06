@@ -37,3 +37,11 @@ services:
         volumes:
             #- ./alerts/config.yaml:/opt/elastalert/config.yaml
             - ./alerts/rules/:/opt/elastalert/rules
+    jhipster-zipkin:
+        build: jhipster-zipkin/
+        environment:
+            - STORAGE_TYPE=elasticsearch
+            - ES_HOSTS=http://jhipster-elasticsearch:9200
+            - ZIPKIN_UI_LOGS_URL=http://localhost:5601/query={traceId}
+        ports:
+            - 9411:9411
