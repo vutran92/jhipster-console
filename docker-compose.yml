@@ -42,6 +42,6 @@ services:
         environment:
             - STORAGE_TYPE=elasticsearch
             - ES_HOSTS=http://jhipster-elasticsearch:9200
-            - ZIPKIN_UI_LOGS_URL=http://localhost:5601/query={traceId}
+            - ZIPKIN_UI_LOGS_URL=http://localhost:5601/app/kibana#/dashboard/logs-dashboard?_g=(refreshInterval%3A(display%3AOff%2Cpause%3A!f%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1h%2Cmode%3Aquick%2Cto%3Anow))&_a=(filters:!(),options:(darkTheme:!t),panels:!((col:1,id:logs-levels,panelIndex:2,row:1,size_x:6,size_y:3,type:visualization),(col:1,columns:!(_source),id:All-logs,panelIndex:5,row:4,size_x:12,size_y:5,sort:!('@timestamp',desc),type:search),(col:7,columns:!(stack_trace),id:Stacktraces,panelIndex:7,row:1,size_x:4,size_y:3,sort:!('@timestamp',desc),type:search),(col:11,id:Log-forwarding-instructions,panelIndex:8,row:1,size_x:2,size_y:3,type:visualization)),query:(query_string:(analyze_wildcard:!t,query:'{traceId}')),title:logs-dashboard,uiState:())
         ports:
             - 9411:9411
