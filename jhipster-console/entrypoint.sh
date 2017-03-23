@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cp /tmp/jhipster-console.svg /usr/share/kibana/optimize/bundles/src/ui/public/images/kibana.svg
-
 # Wait for the Elasticsearch container to be ready before starting Kibana.
  echo "Waiting for Elasticsearch to startup"
  while true; do

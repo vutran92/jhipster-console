@@ -1,5 +1,5 @@
 {
-      "title": "applications-dashboard",
+      "title": "microservices-dashboard",
       "hits": 0,
       "description": "",
       "panelsJSON": "[{\"col\":1,\"id\":\"instances\",\"panelIndex\":1,\"row\":3,\"size_x\":12,\"size_y\":4,\"type\":\"visualization\"},{\"id\":\"applications\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":3,\"size_y\":2,\"col\":5,\"row\":1}]",
