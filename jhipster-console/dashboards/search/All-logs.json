@@ -4,6 +4,7 @@
       "hits": 0,
       "columns": [
         "app_name",
+        "level",
         "message"
       ],
       "sort": [
