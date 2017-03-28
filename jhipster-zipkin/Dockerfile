@@ -3,7 +3,7 @@ FROM openzipkin/zipkin:1.20
 # Embed zipkin dependencies, a spark job to compute the graph between microservices
 ENV ZIPKIN_REPO https://jcenter.bintray.com
 ENV ZIPKIN_DEPENDENCIES_VERSION 1.4.0
-ENV STORAGE_TYPE=elasticsearch
+ENV STORAGE_TYPE elasticsearch
 
 RUN apk add --no-cache coreutils && \
     curl -SL $ZIPKIN_REPO/io/zipkin/dependencies/zipkin-dependencies/$ZIPKIN_DEPENDENCIES_VERSION/zipkin-dependencies-$ZIPKIN_DEPENDENCIES_VERSION.jar > zipkin-dependencies.jar
