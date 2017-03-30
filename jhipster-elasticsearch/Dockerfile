@@ -7,5 +7,4 @@ VOLUME ["/usr/share/elasticsearch/data"]
 ENV ES_JAVA_OPTS "-Xms1g -Xmx1g"
 ENV CLUSTER_NAME elasticsearch-default
 
-EXPOSE 9200
-EXPOSE 9200
+EXPOSE 9200 9300
