@@ -11,7 +11,6 @@
  cd /tmp
  ./load.sh -u kibana:changeme
 
-# [ ! -f /tmp/.initialized ] && echo "Configuring default settings" && curl -XPUT http://${ELASTICSEARCH_URL}/.kibana/config/5.0.0 -d '{"dashboard:defaultDarkTheme": true, "defaultIndex": "logstash-*"}' -u elastic:changeme && touch /tmp/.initialized
 [ ! -f /tmp/.initialized ] && echo "Configuring default settings" && touch /tmp/.initialized
 
 echo "Starting Kibana connecting to ${ELASTICSEARCH_URL}"

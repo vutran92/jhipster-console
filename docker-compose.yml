@@ -13,11 +13,14 @@ services:
     jhipster-logstash:
         build: jhipster-logstash/
         # Uncomment to have logstash config loaded from a volume
+        environment:
+            - ELASTICSEARCH_HOSTS=jhipster-elasticsearch
         volumes:
             - ./jhipster-logstash/config/:/usr/share/logstash/config/
             - ./jhipster-logstash/pipeline/:/usr/share/logstash/pipeline/
         ports:
             - "5000:5000/udp"
+
     jhipster-console:
         build: jhipster-console/
         ports:
