@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-echo -n '{"@timestamp":"2017-04-10T07:28:18.198+00:00","@version":1,"message":"type=TIMER, name=net.infoowl.analytic.tracker.web.rest.AnalyticResource.saveTrack, count=0, min=0.0, max=0.0, mean=0.0, stddev=0.0, median=0.0, p75=0.0, p95=0.0, p98=0.0, p99=0.0, p999=0.0, mean_rate=0.0, m1=0.0, m5=0.0, m15=0.0, rate_unit=events/second, duration_unit=milliseconds","logger_name":"metrics","thread_name":"metrics-logger-reporter-1-thread-1","level":"INFO","level_value":20000,"HOSTNAME":"4b3688b1d525","app_name":"tracker"}' > /dev/udp/jhipster-logstash/5000
