@@ -1,10 +1,1 @@
-FROM elasticsearch:5.1.2-alpine
-
-VOLUME ["/usr/share/elasticsearch/config"]
-VOLUME ["/usr/share/elasticsearch/data"]
-
-# Set environment variables
-ENV ES_JAVA_OPTS "-Xms1g -Xmx1g"
-ENV CLUSTER_NAME elasticsearch-default
-
-EXPOSE 9200 9300
+FROM docker.elastic.co/elasticsearch/elasticsearch:5.3.0
