@@ -5,47 +5,30 @@ services:
         ports:
             - "9200:9200"
             - "9300:9300"
-        volumes:
-            - ./jhipster-elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
         # Uncomment this section to have elasticsearch data loaded from a volume
         #volumes:
         #   - ./log-data:/usr/share/elasticsearch/data
     jhipster-logstash:
         build: jhipster-logstash/
-        # Uncomment to have logstash config loaded from a volume
         environment:
-            - ELASTICSEARCH_HOSTS=jhipster-elasticsearch
-        volumes:
-            - ./jhipster-logstash/config/:/usr/share/logstash/config/
-            - ./jhipster-logstash/pipeline/:/usr/share/logstash/pipeline/
+            - INPUT_UDP_PORT=5000
+            - ELASTICSEARCH_HOST=jhipster-elasticsearch
         ports:
             - "5000:5000/udp"
+        depends_on:
+            - jhipster-elasticsearch
 
     jhipster-console:
         build: jhipster-console/
         ports:
             - "5601:5601"
-        volumes:
-            - ./jhipster-console/kibana.yml:/usr/share/kibana/config/kibana.yml
-
-    jhipster_import_data:
-        # Any Beats image will do. We'll use Metricbeat.
-        image: docker.elastic.co/beats/metricbeat:5.3.0
-#        command:
-        command: bash /usr/share/jhipster-console/load-sample-data.sh
-        volumes:
-            - ./jhipster-console/load-sample-data.sh:/usr/share/jhipster-console/load-sample-data.sh
         depends_on:
             - jhipster-elasticsearch
 
-    jhipster_import_dashboards:
-        # Any Beats image will do. We'll use Metricbeat.
-        image: docker.elastic.co/beats/metricbeat:5.3.0
-        command: /usr/share/metricbeat/scripts/import_dashboards -es "http://jhipster-elasticsearch:9200" -dir /usr/share/jhipster-console/jhipster-dashboards/
-        volumes:
-            - ./jhipster-console/dashboards/:/usr/share/jhipster-console/jhipster-dashboards/
+    jhipster-import-dashboards:
+        build: jhipster-import-dashboards/
         depends_on:
-            - jhipster_import_data
+            - jhipster-elasticsearch
 
     jhipster-alerter:
         build: jhipster-alerter/
