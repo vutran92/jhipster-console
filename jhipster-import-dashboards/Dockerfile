@@ -1,9 +1,7 @@
-FROM docker.elastic.co/beats/metricbeat:5.3.0
+FROM docker.elastic.co/beats/metricbeat:5.4.0
 
-COPY dashboards /usr/share/jhipster-dashboards
+COPY dashboards/ /tmp
 
-ENV ELASTICSEARCH_URL=jhipster-elasticsearch
-ENV ELASTICSEARCH_PORT=9200
-ENV INITIAL_SLEEP_MILLISECONDS=15000
+ENV ELASTICSEARCH_URL=http://jhipster-elasticsearch:9200
 
-CMD sleep $INITIAL_SLEEP_MILLISECONDS && /usr/share/metricbeat/scripts/import_dashboards -es "http://${ELASTICSEARCH_URL}:${ELASTICSEARCH_PORT}" -dir /usr/share/jhipster-dashboards/
+CMD /usr/share/metricbeat/scripts/import_dashboards -es $ELASTICSEARCH_URL -dir /tmp/

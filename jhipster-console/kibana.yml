@@ -71,7 +71,7 @@ bundled_plugin_ids:
  - plugins/vis_types/index
  - plugins/visualize/index
 
-logging.verbose: true
+logging.verbose: false
 
 xpack.security.enabled: false
 xpack.monitoring.enabled: false

@@ -1,10 +1,13 @@
 version: '2'
 services:
+    # https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
     jhipster-elasticsearch:
-        build: jhipster-elasticsearch/ 
+        build: jhipster-elasticsearch/
         ports:
             - "9200:9200"
-            - "9300:9300"
+#        environment:
+#            - http.host=0.0.0.0
+#            - transport.host=127.0.0.1
         # Uncomment this section to have elasticsearch data loaded from a volume
         #volumes:
         #   - ./log-data:/usr/share/elasticsearch/data
@@ -13,6 +16,8 @@ services:
         environment:
             - INPUT_UDP_PORT=5000
             - ELASTICSEARCH_HOST=jhipster-elasticsearch
+            - ELASTICSEARCH_PORT=9200
+        command: logstash -f /usr/share/logstash/pipeline/logstash.conf
         ports:
             - "5000:5000/udp"
         depends_on:
@@ -20,6 +25,8 @@ services:
 
     jhipster-console:
         build: jhipster-console/
+        environment:
+            - ELASTICSEARCH_URL=http://jhipster-elasticsearch:9200
         ports:
             - "5601:5601"
         depends_on:
@@ -27,15 +34,17 @@ services:
 
     jhipster-import-dashboards:
         build: jhipster-import-dashboards/
+        environment:
+            - ELASTICSEARCH_URL=http://jhipster-elasticsearch:9200
         depends_on:
             - jhipster-elasticsearch
 
-    jhipster-alerter:
-        build: jhipster-alerter/
-        # Uncomment this section to enable alerting
-        volumes:
-            #- ./alerts/config.yaml:/opt/elastalert/config.yaml
-            - ./alerts/rules/:/opt/elastalert/rules
+    # jhipster-alerter:
+    #     build: jhipster-alerter/
+    #     # Uncomment this section to enable alerting
+    #     volumes:
+    #         #- ./alerts/config.yaml:/opt/elastalert/config.yaml
+    #         - ./alerts/rules/:/opt/elastalert/rules
 
     jhipster-zipkin:
         build: jhipster-zipkin/
