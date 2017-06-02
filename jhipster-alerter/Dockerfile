@@ -23,7 +23,7 @@ RUN curl -Lo elastalert.tar.gz ${ELASTALERT_URL} && \
 
 WORKDIR /opt/elastalert
 
-RUN  pip install "setuptools>=11.3" \
+RUN  pip install "setuptools>=11.3" && \
     python setup.py install
 
 COPY ./start-elastalert.sh /opt/start-elastalert.sh
