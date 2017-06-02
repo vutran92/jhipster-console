@@ -9,3 +9,13 @@ Please refer to the [JHipster Monitoring Documentation](http://jhipster.github.i
 
 [travis-image]: https://travis-ci.org/jhipster/jhipster-console.svg?branch=master
 [travis-url]: https://travis-ci.org/jhipster/jhipster-console
+
+## Quick Start
+
+Start everything with `docker-compose up -d`, access Kibana at [localhost:5601](http://localhost:5601) and Zipkin at [localhost:9411](http://localhost:9411)
+Once everything is up, load the dashboards with : `docker-compose up jhipster-import-dashboards`
+
+## Contributing
+
+PRs are welcome ! When contributing, make sure you force build and restart everything with `docker-compose down && docker-compose build --no-cache && docker-compose up`.
+
