@@ -9,6 +9,7 @@ env:
     - APP=elasticsearch
     - APP=logstash
     - APP=zipkin
+    - APP=import-dashboards
 install:
   - docker version
   - docker build -f jhipster-"$APP"/Dockerfile -t jhipster/jhipster-"$APP":travis jhipster-"$APP"/
