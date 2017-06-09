@@ -3,9 +3,8 @@ FROM python:2.7-alpine
 RUN apk update && apk upgrade && apk add bash curl tar musl-dev linux-headers g++ libffi-dev libffi openssl-dev
 
 ENV SET_CONTAINER_TIMEZONE=false \
-    ELASTALERT_VERSION=v0.1.14 \
     CONTAINER_TIMEZONE=Europe/Paris \
-    ELASTALERT_URL=https://github.com/Yelp/elastalert/archive/${ELASTALERT_VERSION}.tar.gz \
+    ELASTALERT_URL=https://github.com/Yelp/elastalert/archive/v0.1.14.tar.gz \
     ELASTALERT_HOME=/opt/elastalert \
     RULES_DIRECTORY=/opt/elastalert/rules \
     ELASTICSEARCH_HOST=http://jhipster-elasticsearch \
