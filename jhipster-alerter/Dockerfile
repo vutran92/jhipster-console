@@ -2,18 +2,16 @@ FROM python:2.7-alpine
 
 RUN apk update && apk upgrade && apk add bash curl tar musl-dev linux-headers g++ libffi-dev libffi openssl-dev
 
-ENV SET_CONTAINER_TIMEZONE false
-ENV ELASTALERT_VERSION v0.1.14
-ENV CONTAINER_TIMEZONE Europe/Paris
-ENV ELASTALERT_URL https://github.com/Yelp/elastalert/archive/${ELASTALERT_VERSION}.tar.gz
-
-ENV ELASTALERT_HOME /opt/elastalert
-ENV RULES_DIRECTORY /opt/elastalert/rules
-
-ENV ELASTICSEARCH_HOST http://jhipster-elasticsearch
-ENV ELASTICSEARCH_PORT 9200
-ENV ELASTICSEARCH_USERNAME ""
-ENV ELASTICSEARCH_PASSWORD ""
+ENV SET_CONTAINER_TIMEZONE=false \
+    ELASTALERT_VERSION=v0.1.14 \
+    CONTAINER_TIMEZONE=Europe/Paris \
+    ELASTALERT_URL=https://github.com/Yelp/elastalert/archive/${ELASTALERT_VERSION}.tar.gz \
+    ELASTALERT_HOME=/opt/elastalert \
+    RULES_DIRECTORY=/opt/elastalert/rules \
+    ELASTICSEARCH_HOST=http://jhipster-elasticsearch \
+    ELASTICSEARCH_PORT=9200 \
+    ELASTICSEARCH_USERNAME="" \
+    ELASTICSEARCH_PASSWORD=""
 
 RUN mkdir -p /opt/elastalert
 
