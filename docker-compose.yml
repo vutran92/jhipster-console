@@ -46,6 +46,14 @@ services:
     #         #- ./alerts/config.yaml:/opt/elastalert/config.yaml
     #         - ./alerts/rules/:/opt/elastalert/rules
 
+    # https://www.elastic.co/guide/en/elasticsearch/client/curator/current/configuration.html
+    #jhipster-curator:
+    #      build: jhipster-curator/
+    #      environment:
+    #          ES_HOST=jhipster-elasticsearch
+    #          UNIT_COUNT=7
+    #          UNIT=days
+
     jhipster-zipkin:
         build: jhipster-zipkin/
         environment:
