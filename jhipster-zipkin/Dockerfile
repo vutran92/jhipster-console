@@ -1,12 +1,13 @@
-FROM openzipkin/zipkin:1.26.0
+FROM openzipkin/zipkin:1.28.1
 
 # Embed zipkin dependencies, a spark job to compute the graph between microservices
 ENV ZIPKIN_REPO=https://jcenter.bintray.com \
-    ZIPKIN_DEPENDENCIES_VERSION=1.5.4 \
-    STORAGE_TYPE=elasticsearch
+    ZIPKIN_DEPENDENCIES_VERSION=1.6.1 \
+    STORAGE_TYPE=elasticsearch \
+    # Change the alpine mirror
+    MIRROR=http://distrib-coffee.ipsl.jussieu.fr/pub/linux/alpine/alpine/
 
-RUN apk add --no-cache coreutils && \
-    curl -SL $ZIPKIN_REPO/io/zipkin/dependencies/zipkin-dependencies/$ZIPKIN_DEPENDENCIES_VERSION/zipkin-dependencies-$ZIPKIN_DEPENDENCIES_VERSION.jar > zipkin-dependencies.jar
+RUN curl -o zipkin-dependencies.jar $ZIPKIN_REPO/io/zipkin/dependencies/zipkin-dependencies/$ZIPKIN_DEPENDENCIES_VERSION/zipkin-dependencies-$ZIPKIN_DEPENDENCIES_VERSION.jar 
 
 # Copy CRON files
 COPY periodic/ /etc/periodic/
