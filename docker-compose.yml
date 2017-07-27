@@ -20,7 +20,8 @@ services:
             - ELASTICSEARCH_PORT=9200
             - LOGSTASH_DEBUG=true
         ports:
-            - "5000:5000/udp"
+            - "5000:5000"
+            - "9600:9600"
         depends_on:
             - jhipster-elasticsearch
 
@@ -47,13 +48,13 @@ services:
     #         #- ./alerts/config.yaml:/opt/elastalert/config.yaml
     #         - ./alerts/rules/:/opt/elastalert/rules
 
-    # https://www.elastic.co/guide/en/elasticsearch/client/curator/current/configuration.html
-    #jhipster-curator:
+    #https://www.elastic.co/guide/en/elasticsearch/client/curator/current/configuration.html
+    # jhipster-curator:
     #      build: jhipster-curator/
     #      environment:
-    #          ES_HOST=jhipster-elasticsearch
-    #          UNIT_COUNT=7
-    #          UNIT=days
+    #          - ES_HOST=jhipster-elasticsearch
+    #          - UNIT_COUNT=7
+    #          - UNIT=days
 
     # jhipster-zipkin:
     #     build: jhipster-zipkin/
