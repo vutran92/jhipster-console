@@ -10,6 +10,7 @@ env:
     - APP=logstash
     - APP=zipkin
     - APP=import-dashboards
+    - APP=curator
 install:
   - docker version
   - docker build -f jhipster-"$APP"/Dockerfile -t jhipster/jhipster-"$APP":travis jhipster-"$APP"/
