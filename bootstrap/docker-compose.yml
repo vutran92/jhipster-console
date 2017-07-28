@@ -19,10 +19,11 @@ services:
             - LOGSTASH_DEBUG=false
         ports:
             - 5000:5000
+            - 5000:5000/udp
         # Uncomment this section and add a logstash.conf file in log-conf/
         # to have logstash config loaded from a volume
         #volumes:
-        #    - ./log-conf/:/conf
+        #    - ./log-conf/:/usr/share/logstash/pipeline/
 
     jhipster-console:
         image: jhipster/jhipster-console:edge
@@ -38,12 +39,12 @@ services:
         depends_on:
             - jhipster-elasticsearch
 
-    # jhipster-curator:
-    #     image: jhipster/jhipster-curator
-    #     environment:
-    #         - ES_HOST=jhipster-elasticsearch
-    #         - UNIT_COUNT=7
-    #         - UNIT=days
+    jhipster-curator:
+        image: jhipster/jhipster-curator:edge
+        environment:
+            - ES_HOST=jhipster-elasticsearch
+            - UNIT_COUNT=7
+            - UNIT=days
 
     jhipster-alerter:
         image: jhipster/jhipster-alerter:edge
