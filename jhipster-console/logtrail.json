@@ -21,7 +21,7 @@
             "program": "instance_id",
             "message": "message"
         },
-        "message_format": "{{{message}}}"
+        "message_format": "{{{level}}} - {{{logger_name}}} : {{{message}}}\n{{{stack_trace}}}"
       }
     }  
   ]
