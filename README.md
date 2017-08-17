@@ -12,8 +12,7 @@ Please refer to the [JHipster Monitoring Documentation](http://jhipster.github.i
 
 ## Quick Start
 
-Start everything with `docker-compose up -d`, access Kibana at [localhost:5601](http://localhost:5601) and Zipkin at [localhost:9411](http://localhost:9411)
-Once everything is up, load the dashboards with : `docker-compose up jhipster-import-dashboards`
+Start everything by running `docker-compose up -d` in the `bootstrap/` directory, then access Kibana at [localhost:5601](http://localhost:5601) and Zipkin at [localhost:9411](http://localhost:9411).
 
 ## Contributing
 
