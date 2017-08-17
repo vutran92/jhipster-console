@@ -73,7 +73,8 @@ bundled_plugin_ids:
 
 logging.verbose: false
 
-xpack.security.enabled: false
-xpack.monitoring.enabled: false
 xpack.graph.enabled: false
+xpack.ml.enabled: false
+xpack.monitoring.enabled: false
 xpack.reporting.enabled: false
+xpack.security.enabled: false
