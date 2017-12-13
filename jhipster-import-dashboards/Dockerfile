@@ -1,4 +1,4 @@
-FROM docker.elastic.co/beats/metricbeat:5.5.1
+FROM docker.elastic.co/beats/metricbeat:6.0.1
 
 COPY dashboards/ /tmp
 WORKDIR /usr/share/metricbeat/scripts/
