@@ -1,11 +1,11 @@
 FROM quay.io/openzipkin/zipkin:2.4.1
 
 # Embed zipkin dependencies, a spark job to compute the graph between microservices
-ENV ZIPKIN_REPO=https://jcenter.bintray.com \
+ENV ZIPKIN_REPO=https://search.maven.org/remote_content?g=io.zipkin.dependencies&a=zipkin-dependencies \
     ZIPKIN_DEPENDENCIES_VERSION=1.11.0 \
     STORAGE_TYPE=elasticsearch
 
-RUN wget $ZIPKIN_REPO/io/zipkin/dependencies/zipkin-dependencies/$ZIPKIN_DEPENDENCIES_VERSION/zipkin-dependencies-$ZIPKIN_DEPENDENCIES_VERSION.jar
+RUN wget -O zipkin-dependencies.jar $ZIPKIN_REPO&v=$ZIPKIN_DEPENDENCIES_VERSION.jar
 
 # Copy CRON files
 COPY periodic/ /etc/periodic/
