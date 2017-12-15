@@ -1,8 +1,9 @@
-FROM docker.elastic.co/beats/metricbeat:6.0.1
+FROM docker.elastic.co/beats/metricbeat:6.1.0
 
-COPY dashboards/ /tmp
-WORKDIR /usr/share/metricbeat/scripts/
+COPY dashboards /tmp
+WORKDIR /usr/share/metricbeat/
 COPY wait-for-elasticsearch.sh create-index-patterns.sh ./
 ENV ELASTICSEARCH_URL=http://jhipster-elasticsearch:9200
+ENV KIBANA_URL=http://jhipster-console:5601
 
-CMD ./wait-for-elasticsearch.sh && ./create-index-patterns.sh && ./import_dashboards -es $ELASTICSEARCH_URL -dir /tmp/
+CMD ./wait-for-elasticsearch.sh  && ./metricbeat setup --dashboards -E output.elasticsearch.hosts="[$ELASTICSEARCH_URL]" -E setup.kibana.host=$KIBANA_URL -E setup.dashboards.directory=/tmp
