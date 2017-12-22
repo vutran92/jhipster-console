@@ -1,8 +1,7 @@
 FROM docker.elastic.co/beats/metricbeat:6.1.0
-
 COPY dashboards /tmp
 WORKDIR /usr/share/metricbeat/
-COPY wait-for-elasticsearch.sh create-index-patterns.sh ./
+COPY wait-for-elasticsearch.sh ./
 ENV ELASTICSEARCH_URL=http://jhipster-elasticsearch:9200
 ENV KIBANA_URL=http://jhipster-console:5601
 
