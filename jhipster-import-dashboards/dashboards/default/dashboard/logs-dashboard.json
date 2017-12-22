@@ -71,7 +71,7 @@
         "title": "Select Application",
         "uiStateJSON": "{}",
         "version": 1,
-        "visState": "{\"title\":\"Select Application\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1513348424847\",\"indexPattern\":\"bc346a40-e1a3-11e7-9e91-0b5690fc3839\",\"fieldName\":\"app_name.keyword\",\"label\":\"Select application\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true},\"aggs\":[]}"
+        "visState": "{\"title\":\"Select Application\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1513348424847\",\"indexPattern\":\"bc346a40-e1a3-11e7-9e91-0b5690fc3839\",\"fieldName\":\"app_name.keyword\",\"label\":\"Select application\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"}},{\"id\":\"1513956661970\",\"indexPattern\":\"bc346a40-e1a3-11e7-9e91-0b5690fc3839\",\"fieldName\":\"instance_id.keyword\",\"label\":\"Select Instance\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true},\"aggs\":[]}"
       },
       "id": "08029590-e1a5-11e7-9e74-19a039e44384",
       "type": "visualization",
