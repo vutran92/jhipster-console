@@ -3,14 +3,15 @@ FROM python:2.7-alpine
 RUN apk update && apk upgrade && apk add bash curl tar musl-dev linux-headers g++ libffi-dev libffi openssl-dev
 
 ENV SET_CONTAINER_TIMEZONE=false \
-    CONTAINER_TIMEZONE=Europe/Paris \
+    CONTAINER_TIMEZONE=UTC \
     ELASTALERT_URL=https://github.com/Yelp/elastalert/archive/v0.1.25.tar.gz \
     ELASTALERT_HOME=/opt/elastalert \
     RULES_DIRECTORY=/opt/elastalert/rules \
-    ELASTICSEARCH_HOST=http://jhipster-elasticsearch \
-    ELASTICSEARCH_PORT=9200 \
-    ELASTICSEARCH_USERNAME="" \
-    ELASTICSEARCH_PASSWORD=""
+    ES_HOST=jhipster-elasticsearch \
+    USE_SSL=False \
+    ES_PORT=9200 \
+    ES_USERNAME="" \
+    ES_PASSWORD=""
 
 RUN mkdir -p /opt/elastalert
 
