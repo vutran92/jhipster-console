@@ -1,4 +1,4 @@
-FROM docker.elastic.co/beats/metricbeat:6.1.0
+FROM docker.elastic.co/beats/metricbeat:6.1.1
 COPY dashboards /tmp
 WORKDIR /usr/share/metricbeat/
 COPY wait-for-elasticsearch.sh ./
