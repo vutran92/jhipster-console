@@ -11,7 +11,7 @@
         "description": "",
         "hits": 0,
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"bc346a40-e1a3-11e7-9e91-0b5690fc3839\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"c7b73f10-e0e4-11e7-9c68-0b9a0f0c183c\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"logger_name\",\"value\":\"metrics\",\"params\":{\"query\":\"metrics\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"logger_name\":{\"query\":\"metrics\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+          "searchSourceJSON": "{\"index\":\"logstash-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"c7b73f10-e0e4-11e7-9c68-0b9a0f0c183c\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"logger_name\",\"value\":\"metrics\",\"params\":{\"query\":\"metrics\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"logger_name\":{\"query\":\"metrics\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
         },
         "sort": [
           "@timestamp",
@@ -35,7 +35,7 @@
         "description": "",
         "hits": 0,
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"bc346a40-e1a3-11e7-9e91-0b5690fc3839\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"c7b73f10-e0e4-11e7-9c68-0b9a0f0c183c\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"logger_name\",\"value\":\"metrics\",\"params\":{\"query\":\"metrics\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"logger_name\":{\"query\":\"metrics\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+          "searchSourceJSON": "{\"index\":\"logstash-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"c7b73f10-e0e4-11e7-9c68-0b9a0f0c183c\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"logger_name\",\"value\":\"metrics\",\"params\":{\"query\":\"metrics\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"logger_name\":{\"query\":\"metrics\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
         },
         "sort": [
           "@timestamp",
@@ -58,7 +58,7 @@
         "title": "Select Application",
         "uiStateJSON": "{}",
         "version": 1,
-        "visState": "{\"title\":\"Select Application\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1513348424847\",\"indexPattern\":\"bc346a40-e1a3-11e7-9e91-0b5690fc3839\",\"fieldName\":\"app_name.keyword\",\"label\":\"Application\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"}},{\"id\":\"1513956661970\",\"indexPattern\":\"bc346a40-e1a3-11e7-9e91-0b5690fc3839\",\"fieldName\":\"instance_id.keyword\",\"label\":\"Instance\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"}},{\"id\":\"1513958886954\",\"indexPattern\":\"bc346a40-e1a3-11e7-9e91-0b5690fc3839\",\"fieldName\":\"level.keyword\",\"label\":\"Log level\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":5,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true},\"aggs\":[]}"
+        "visState": "{\"title\":\"Select Application\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1513348424847\",\"indexPattern\":\"logstash-*\",\"fieldName\":\"app_name.keyword\",\"label\":\"Application\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"}},{\"id\":\"1513956661970\",\"indexPattern\":\"logstash-*\",\"fieldName\":\"instance_id.keyword\",\"label\":\"Instance\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"}},{\"id\":\"1513958886954\",\"indexPattern\":\"logstash-*\",\"fieldName\":\"level.keyword\",\"label\":\"Log level\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":5,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true},\"aggs\":[]}"
       },
       "id": "08029590-e1a5-11e7-9e74-19a039e44384",
       "type": "visualization",
@@ -102,5 +102,5 @@
       "version": 5
     }
   ],
-  "version": "6.1.0"
+  "version": "6.1.1"
 }

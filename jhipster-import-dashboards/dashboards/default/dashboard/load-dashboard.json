@@ -4,7 +4,7 @@
       "attributes": {
         "description": "",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"bc346a40-e1a3-11e7-9e91-0b5690fc3839\",\"filter\":[],\"query\":{\"query\":\"*instrumentedFilter.request*\",\"language\":\"lucene\"}}"
+          "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"query\":{\"query\":\"*instrumentedFilter.request*\",\"language\":\"lucene\"}}"
         },
         "title": "Request rate",
         "uiStateJSON": "{}",
@@ -34,5 +34,5 @@
       "version": 1
     }
   ],
-  "version": "6.1.0"
+  "version": "6.1.1"
 }
