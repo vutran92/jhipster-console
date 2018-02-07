@@ -13,11 +13,13 @@ services:
         environment:
             - INPUT_TCP_PORT=5000
             - INPUT_UDP_PORT=5000
+            - INPUT_HTTP_PORT=5001
             - ELASTICSEARCH_HOST=jhipster-elasticsearch
             - ELASTICSEARCH_PORT=9200
             - LOGSTASH_DEBUG=true
         ports:
             - "5000:5000"
+            - "5001:5001"
             - "9600:9600"
         depends_on:
             - jhipster-elasticsearch
@@ -57,6 +59,6 @@ services:
     #     build: jhipster-zipkin/
     #     environment:
     #         - ES_HOSTS=http://jhipster-elasticsearch:9200
-    #         - ZIPKIN_UI_LOGS_URL=http://localhost:5601/app/kibana#/dashboard/logs-dashboard?_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-1h,mode:quick,to:now))&_a=(filters:!(),options:(darkTheme:!f),panels:!((col:1,id:logs-levels,panelIndex:2,row:1,size_x:6,size_y:3,type:visualization),(col:7,columns:!(stack_trace),id:Stacktraces,panelIndex:7,row:1,size_x:4,size_y:3,sort:!('@timestamp',desc),type:search),(col:11,id:Log-forwarding-instructions,panelIndex:8,row:1,size_x:2,size_y:3,type:visualization),(col:1,columns:!(app_name,message),id:All-logs,panelIndex:9,row:4,size_x:12,size_y:7,sort:!('@timestamp',asc),type:search)),query:(query_string:(analyze_wildcard:!t,query:'{traceId}')),title:logs-dashboard,uiState:())
+    #         - ZIPKIN_UI_LOGS_URL=http://localhost:5601/app/kibana#/discover/d0682f20-e0e9-11e7-9c68-0b9a0f0c183c?_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-30d,mode:quick,to:now))&_a=(columns:!(X-B3-TraceId,app_name,level,message),filters:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:c7b73f10-e0e4-11e7-9c68-0b9a0f0c183c,key:logger_name,negate:!t,params:(query:metrics,type:phrase),type:phrase,value:metrics),query:(match:(logger_name:(query:metrics,type:phrase)))),('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'logstash-*',key:X-B3-TraceId,negate:!f,params:(query:{traceId},type:phrase),type:phrase,value:{traceId}),query:(match:(X-B3-TraceId:(query:{traceId},type:phrase))))),index:'logstash-*',interval:auto,query:(language:lucene,query:''),sort:!('@timestamp',asc))
     #     ports:
     #         - 9411:9411
