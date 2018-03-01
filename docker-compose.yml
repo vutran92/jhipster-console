@@ -44,7 +44,7 @@ services:
     #     build: jhipster-alerter/
     #     # Uncomment this section to enable alerting
     #     volumes:
-    #         #- ./alerts/config.yaml:/opt/elastalert/config.yaml
+    #         - ./jhipster-alerter/config.yaml:/opt/elastalert/config.yaml
     #         - ./alerts/rules/:/opt/elastalert/rules
 
     #https://www.elastic.co/guide/en/elasticsearch/client/curator/current/configuration.html
