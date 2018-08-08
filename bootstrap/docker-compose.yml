@@ -53,7 +53,7 @@ services:
             - UNIT=days
 
     jhipster-alerter:
-        image: jhipster/jhipster-alerter
+        image: jhipster/jhipster-alerter:latest
         environment:
             - ES_HOST=jhipster-elasticsearch
             - ES_PORT=9200
