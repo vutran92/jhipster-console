@@ -4,7 +4,7 @@ RUN apk update && apk upgrade && apk add bash curl tar musl-dev linux-headers g+
 
 ENV SET_CONTAINER_TIMEZONE=false \
     CONTAINER_TIMEZONE=UTC \
-    ELASTALERT_URL=https://github.com/Yelp/elastalert/archive/v0.1.29.tar.gz \
+    ELASTALERT_URL=https://github.com/Yelp/elastalert/archive/v0.1.33.tar.gz \
     ELASTALERT_HOME=/opt/elastalert \
     RULES_DIRECTORY=/opt/elastalert/rules \
     ES_HOST=jhipster-elasticsearch \
