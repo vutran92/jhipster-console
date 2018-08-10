@@ -1,10 +1,5 @@
 #!/bin/bash
 # Based on https://github.com/krizsan/elastalert-docker
-echo "Waiting for ES to startup"
-while true; do
-    curl ${ES_HOST}:${ES_PORT} 2>/dev/null && break
-    sleep 1
-done
 echo "Starting Alerting"
 
 # Set the timezone.
@@ -25,7 +20,6 @@ fi
 
 cd /opt/elastalert
 
-# TODO do this in the import-dashboards container instead 
 if ! curl -f $flags ${ES_HOST}:${ES_PORT} >/dev/null 2>&1
 then
 	echo "ES not available at ${ES_HOST}:${ES_PORT}"

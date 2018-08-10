@@ -25,15 +25,15 @@ RUN pip install "requests==2.18.1" && \
     pip install "setuptools>=11.3" && \
     python setup.py install
 
-COPY ./start-elastalert.sh /opt/start-elastalert.sh
+COPY wait-for-elasticsearch.sh start-elastalert.sh /opt/
 RUN chmod +x /opt/start-elastalert.sh
 #RUN sed -i -e 's/\r$//' /opt/start-elastalert.sh
 
-COPY ./config.yaml /opt/elastalert/
+COPY config.yaml /opt/elastalert/
 RUN mkdir /opt/elastalert/rules
 
 VOLUME ["/opt/elastalert/"]
 VOLUME ["/opt/elastalert/rules"]
 
 # Launch Elastalert when a container is started.
-CMD ["/opt/start-elastalert.sh"]
+CMD /opt/wait-for-elasticsearch.sh && /opt/start-elastalert.sh
