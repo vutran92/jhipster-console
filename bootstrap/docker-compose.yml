@@ -58,9 +58,8 @@ services:
             - ES_HOST=jhipster-elasticsearch
             - ES_PORT=9200
         volumes:
-            - ../jhipster-alerter/rules/:/opt/elastalert/rules/
-            - ../alerts/config.yaml:/opt/elastalert/config.yaml
-
+            - ../alerts/rules/:/opt/elastalert/rules/
+            - ../jhipster-alerter/config.yaml:/opt/elastalert/config.yaml
     jhipster-zipkin:
         image: jhipster/jhipster-zipkin:latest
         environment:
