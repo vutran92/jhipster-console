@@ -65,7 +65,7 @@
           "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
         },
         "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
-        "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":10,\"w\":48,\"h\":19,\"i\":\"1\"},\"embeddableConfig\":{},\"id\":\"739fb300-9c76-11e8-bfa6-a7fdcbb4d022\",\"type\":\"search\",\"version\":\"6.3.2\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":22,\"y\":0,\"w\":26,\"h\":10,\"i\":\"2\"},\"embeddableConfig\":{},\"id\":\"0d103f50-9c77-11e8-bfa6-a7fdcbb4d022\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":0,\"y\":0,\"w\":22,\"h\":10,\"i\":\"4\"},\"version\":\"6.3.2\",\"type\":\"visualization\",\"id\":\"eaa9d4c0-9c77-11e8-bfa6-a7fdcbb4d022\",\"embeddableConfig\":{}}]",
+        "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":10,\"w\":48,\"h\":19,\"i\":\"1\"},\"embeddableConfig\":{},\"id\":\"739fb300-9c76-11e8-bfa6-a7fdcbb4d022\",\"type\":\"search\",\"version\":\"6.4.0\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":22,\"y\":0,\"w\":26,\"h\":10,\"i\":\"2\"},\"embeddableConfig\":{},\"id\":\"0d103f50-9c77-11e8-bfa6-a7fdcbb4d022\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":0,\"y\":0,\"w\":22,\"h\":10,\"i\":\"4\"},\"version\":\"6.4.0\",\"type\":\"visualization\",\"id\":\"eaa9d4c0-9c77-11e8-bfa6-a7fdcbb4d022\",\"embeddableConfig\":{}}]",
         "timeRestore": false,
         "title": "alerting-dashboard",
         "version": 1
@@ -76,5 +76,5 @@
       "version": 2
     }
   ],
-  "version": "6.3.2"
+  "version": "6.4.1"
 }

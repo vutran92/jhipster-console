@@ -1,6 +1,6 @@
-FROM openzipkin/zipkin:2.11.1
+FROM openzipkin/zipkin:2.11.5
 # Embed zipkin dependencies, a spark job to compute the graph between microservices
-ENV ZIPKIN_DEPENDENCIES_VERSION=2.0.0 \
+ENV ZIPKIN_DEPENDENCIES_VERSION=2.0.1 \
     STORAGE_TYPE=elasticsearch
 
 RUN curl -SL $ZIPKIN_REPO/io/zipkin/dependencies/zipkin-dependencies/$ZIPKIN_DEPENDENCIES_VERSION/zipkin-dependencies-$ZIPKIN_DEPENDENCIES_VERSION.jar > zipkin-dependencies.jar
