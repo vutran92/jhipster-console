@@ -4,7 +4,7 @@
       "attributes": {
         "description": "",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+          "searchSourceJSON": "{\"index\":\"metrics\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
         },
         "title": "Instances",
         "uiStateJSON": "{}",
@@ -19,7 +19,7 @@
       "attributes": {
         "description": "",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"query\":{\"query\":\"metric_name=jvm.memory.total*\",\"language\":\"lucene\"}}"
+          "searchSourceJSON": "{\"index\":\"metrics\",\"filter\":[],\"query\":{\"query\":\"metric_name=jvm.memory.total*\",\"language\":\"lucene\"}}"
         },
         "title": "JVM Total Memory",
         "uiStateJSON": "{}",
@@ -34,7 +34,7 @@
       "attributes": {
         "description": "",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"query\":{\"query\":\"metric_name=jvm.memory.heap*\",\"language\":\"lucene\"}}"
+          "searchSourceJSON": "{\"index\":\"metrics\",\"filter\":[],\"query\":{\"query\":\"metric_name=jvm.memory.heap*\",\"language\":\"lucene\"}}"
         },
         "title": "JVM Heap Memory",
         "uiStateJSON": "{}",
@@ -49,7 +49,7 @@
       "attributes": {
         "description": "",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"query\":{\"query\":\"metric_name=jvm.memory.heap*\",\"language\":\"lucene\"}}"
+          "searchSourceJSON": "{\"index\":\"metrics\",\"filter\":[],\"query\":{\"query\":\"metric_name=jvm.memory.heap*\",\"language\":\"lucene\"}}"
         },
         "title": "JVM Threads",
         "uiStateJSON": "{}",
@@ -79,7 +79,7 @@
       "attributes": {
         "description": "",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"query\":{\"query\":\"metric_name=jvm.memory.non-heap*\",\"language\":\"lucene\"}}"
+          "searchSourceJSON": "{\"index\":\"metrics\",\"filter\":[],\"query\":{\"query\":\"metric_name=jvm.memory.non-heap*\",\"language\":\"lucene\"}}"
         },
         "title": "JVM Non-Heap Memory",
         "uiStateJSON": "{}",

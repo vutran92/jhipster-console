@@ -4,7 +4,7 @@
       "attributes": {
         "description": "",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"query\":{\"query\":\"*instrumentedFilter.request*\",\"language\":\"lucene\"}}"
+          "searchSourceJSON": "{\"index\":\"metrics\",\"filter\":[],\"query\":{\"query\":\"*instrumentedFilter.request*\",\"language\":\"lucene\"}}"
         },
         "title": "Request rate",
         "uiStateJSON": "{}",
@@ -25,7 +25,7 @@
         "optionsJSON": "{\"darkTheme\":true,\"useMargins\":false,\"hidePanelTitles\":false}",
         "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":12,\"h\":7,\"i\":\"1\"},\"version\":\"6.1.0\",\"type\":\"visualization\",\"id\":\"9a0907c0-e0f2-11e7-9c68-0b9a0f0c183c\"}]",
         "timeRestore": false,
-        "title": "load-dashboard",
+        "title": "requests-dashboard",
         "uiStateJSON": "{}",
         "version": 1
       },

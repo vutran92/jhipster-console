@@ -2,9 +2,8 @@ actions:
   1:
     action: delete_indices
     description: >-
-       Delete indices older than ${UNIT_COUNT:1} ${UNIT:months} (based on index name), for logstash-
-       prefixed indices. Ignore the error if the filter does not result in an
-       actionable list of indices (ignore_empty_list) and exit cleanly.
+       Delete indices older than ${UNIT_COUNT:1} ${UNIT:months} (based on index name), for logs-*
+       prefixed indices.
     options:
       ignore_empty_list: True
       timeout_override:
@@ -13,7 +12,7 @@ actions:
     filters:
     - filtertype: pattern
       kind: prefix
-      value: logstash-
+      value: logs-
       exclude:
     - filtertype: age
       source: name
@@ -25,9 +24,8 @@ actions:
   2:
     action: delete_indices
     description: >-
-       Delete indices older than ${UNIT_COUNT:1} ${UNIT:months} (based on index name), for zipkin-
-       prefixed indices. Ignore the error if the filter does not result in an
-       actionable list of indices (ignore_empty_list) and exit cleanly.
+       Delete indices older than ${UNIT_COUNT:1} ${UNIT:months} (based on index name), for metrics-*
+       prefixed indices.
     options:
       ignore_empty_list: True
       timeout_override:
@@ -36,7 +34,29 @@ actions:
     filters:
     - filtertype: pattern
       kind: prefix
-      value: zipkin:span-
+      value: metrics-
+      exclude:
+    - filtertype: age
+      source: name
+      direction: older
+      timestring: '%Y.%m.%d'
+      unit: ${UNIT:months}
+      unit_count: ${UNIT_COUNT:1}
+      exclude:
+  3:
+    action: delete_indices
+    description: >-
+       Delete indices older than ${UNIT_COUNT:1} ${UNIT:months} (based on index name), for traces-
+       prefixed indices.
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: True
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: prefix
+      value: traces-
       exclude:
     - filtertype: age
       source: name

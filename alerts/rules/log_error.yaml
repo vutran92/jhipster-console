@@ -3,7 +3,7 @@ es_host: jhipster-elasticsearch
 es_port: 9200
 name: log_error
 type: frequency
-index: logstash-*
+index: logs-*
 # link to a kibana dashboard with correct time settings
 use_kibana4_dashboard: "http://localhost:5601/app/kibana#/dashboard/d712f650-e0eb-11e7-9c68-0b9a0f0c183c"
 num_events: 1

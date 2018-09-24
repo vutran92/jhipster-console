@@ -1,17 +1,18 @@
 FROM python:2.7-alpine
 
-RUN apk update && apk upgrade && apk add bash curl tar musl-dev linux-headers g++ libffi-dev libffi openssl-dev
+RUN apk update && apk upgrade && apk add bash curl tar musl-dev linux-headers g++ libffi-dev libffi openssl-dev libmagic
 
 ENV SET_CONTAINER_TIMEZONE=false \
     CONTAINER_TIMEZONE=UTC \
-    ELASTALERT_URL=https://github.com/Yelp/elastalert/archive/v0.1.33.tar.gz \
+    ELASTALERT_URL=https://github.com/Yelp/elastalert/archive/v0.1.36.tar.gz \
     ELASTALERT_HOME=/opt/elastalert \
     RULES_DIRECTORY=/opt/elastalert/rules \
     ES_HOST=jhipster-elasticsearch \
     USE_SSL=False \
     ES_PORT=9200 \
     ES_USERNAME="" \
-    ES_PASSWORD=""
+    ES_PASSWORD="" \
+    ES_INDEX="alerts"
 
 RUN mkdir -p /opt/elastalert
 

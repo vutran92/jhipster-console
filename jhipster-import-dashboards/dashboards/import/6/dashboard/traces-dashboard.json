@@ -4,7 +4,7 @@
       "attributes": {
         "description": "",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"zipkin:span\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+          "searchSourceJSON": "{\"index\":\"traces:span\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
         },
         "title": "Longest Traces durations",
         "uiStateJSON": "{}",
@@ -20,7 +20,7 @@
       "attributes": {
         "description": "",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"index\":\"zipkin:span\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+          "searchSourceJSON": "{\"index\":\"traces:span\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
         },
         "title": "Longest traces details",
         "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",

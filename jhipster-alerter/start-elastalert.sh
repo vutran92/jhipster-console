@@ -24,10 +24,10 @@ if ! curl -f $flags ${ES_HOST}:${ES_PORT} >/dev/null 2>&1
 then
 	echo "ES not available at ${ES_HOST}:${ES_PORT}"
 else
-	if ! curl -f $flags ${ES_HOST}:${ES_PORT}/elastalert_status >/dev/null 2>&1
+	if ! curl -f $flags ${ES_HOST}:${ES_PORT}/${ES_INDEX} >/dev/null 2>&1
 	then
 		echo "Creating Elastalert index in ES..."
-	    elastalert-create-index --index elastalert_status --old-index ""
+	    elastalert-create-index --index ${ES_INDEX} --old-index ""
 	else
 	    echo "Elastalert index already exists in ES."
 	fi
