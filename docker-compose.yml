@@ -42,20 +42,19 @@ services:
 
     jhipster-alerter:
         build: jhipster-alerter/
-        #environment:
-        #    - WEBHOOK_URL=https://
-        # Uncomment this section to enable alerting
+        environment:
+            - WEBHOOK_URL=https://
         volumes:
             - ./jhipster-alerter/config.yaml:/opt/elastalert/config.yaml
             - ./alerts/rules/:/opt/elastalert/rules
 
     #https://www.elastic.co/guide/en/elasticsearch/client/curator/current/configuration.html
-    # jhipster-curator:
-    #      build: jhipster-curator/
-    #      environment:
-    #          - ES_HOST=jhipster-elasticsearch
-    #          - UNIT_COUNT=7
-    #          - UNIT=days
+    jhipster-curator:
+        build: jhipster-curator/
+        environment:
+            - ES_HOST=jhipster-elasticsearch
+            - UNIT_COUNT=7
+            - UNIT=days
 
     jhipster-zipkin:
         build: jhipster-zipkin/
