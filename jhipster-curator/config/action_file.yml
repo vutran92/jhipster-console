@@ -36,7 +36,7 @@ actions:
     filters:
     - filtertype: pattern
       kind: prefix
-      value: zipkin-
+      value: zipkin:span-
       exclude:
     - filtertype: age
       source: name
