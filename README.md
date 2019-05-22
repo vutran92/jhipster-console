@@ -1,11 +1,13 @@
 # JHipster Console
 
-[![Build Status][travis-image]][travis-url]
-[![Join the chat at https://gitter.im/jhipster/jhipster-console](https://badges.gitter.im/jhipster/jhipster-console.svg)](https://gitter.im/jhipster/jhipster-console?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Azure DevOps Build Status][azure-devops-image]][azure-devops-url-main] [![Build Status][travis-image]][travis-url] [![Join the chat at https://gitter.im/jhipster/jhipster-console](https://badges.gitter.im/jhipster/jhipster-console.svg)](https://gitter.im/jhipster/jhipster-console?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This is the [JHipster](http://jhipster.github.io/) Console, based on the [ELK Stack](https://www.elastic.co/products) and [Zipkin](https://zipkin.io/). It provides a default configuration to get started with logs, metrics and traces monitoring with ELK and Zipkin as well as some nice dashboards.
 
 Please refer to the [JHipster Monitoring Documentation](http://jhipster.github.io/monitoring) for instructions on how to set up the JHipster Console.
+
+[azure-devops-image]: https://dev.azure.com/jhipster/jhipster-console/_apis/build/status/jhipster.jhipster-console?branchName=master
+[azure-devops-url-main]: https://dev.azure.com/jhipster/jhipster-console/_build
 
 [travis-image]: https://travis-ci.org/jhipster/jhipster-console.svg?branch=master
 [travis-url]: https://travis-ci.org/jhipster/jhipster-console
