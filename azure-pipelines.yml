@@ -1,0 +1,39 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+strategy:
+  matrix:
+    alerter:
+      APP: alerter
+    console:
+      APP: console
+    elasticsearch:
+      APP: elasticsearch
+    logstash:
+      APP: logstash
+    zipkin:
+      APP: zipkin
+    import-dashboards:
+      APP: import-dashboards
+    curator:
+      APP: curator
+
+
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+- script: |
+    docker version
+    docker build -f jhipster-"$(APP)"/Dockerfile -t jhipster/jhipster-"$(APP)":travis jhipster-"$(APP)"/
+  displayName: 'Install'
+
+- script: |
+    docker images
+    docker inspect jhipster/jhipster-"$(APP)":travis
+  displayName: 'Run test'
