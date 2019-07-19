@@ -13,8 +13,8 @@
       },
       "id": "0cb73540-bfd6-11e8-b5e5-cbdd0005bb7b",
       "type": "visualization",
-      "updated_at": "2018-09-24T08:50:38.700Z",
-      "version": 2
+      "updated_at": "2019-07-19T15:50:03.922Z",
+      "version": 1
     },
     {
       "attributes": {
@@ -29,8 +29,8 @@
       },
       "id": "b324f390-bfd6-11e8-b5e5-cbdd0005bb7b",
       "type": "visualization",
-      "updated_at": "2018-09-24T08:49:52.480Z",
-      "version": 2
+      "updated_at": "2019-07-19T15:50:03.922Z",
+      "version": 1
     },
     {
       "attributes": {
@@ -47,8 +47,8 @@
       },
       "id": "81d34a00-bfd4-11e8-b5e5-cbdd0005bb7b",
       "type": "dashboard",
-      "updated_at": "2018-09-24T08:50:53.230Z",
-      "version": 3
+      "updated_at": "2019-07-19T15:50:03.922Z",
+      "version": 1
     }
   ],
   "version": "6.4.1"

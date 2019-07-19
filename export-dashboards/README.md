@@ -2,7 +2,7 @@
 
 ## Usage
 
-Install golang, run `go build` then the `export-dashboard.sh` script.
+Install golang, run `go get -v -u github.com/elastic/beats/libbeat/common && go build` then the `export-dashboard.sh` script.
 
 ## Official docs
 

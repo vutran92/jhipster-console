@@ -22,8 +22,8 @@
       },
       "id": "d0682f20-e0e9-11e7-9c68-0b9a0f0c183c",
       "type": "search",
-      "updated_at": "2018-10-02T18:29:56.472Z",
-      "version": 2
+      "updated_at": "2019-07-19T15:50:00.832Z",
+      "version": 1
     },
     {
       "attributes": {
@@ -46,7 +46,7 @@
       },
       "id": "eef89600-e0e9-11e7-9c68-0b9a0f0c183c",
       "type": "search",
-      "updated_at": "2018-10-02T18:17:44.034Z",
+      "updated_at": "2019-07-19T15:50:00.832Z",
       "version": 1
     },
     {
@@ -62,7 +62,7 @@
       },
       "id": "08029590-e1a5-11e7-9e74-19a039e44384",
       "type": "visualization",
-      "updated_at": "2018-10-02T18:17:44.034Z",
+      "updated_at": "2019-07-19T15:50:00.832Z",
       "version": 1
     },
     {
@@ -79,7 +79,7 @@
       },
       "id": "1937ae30-e732-11e7-9401-c3493ac5b475",
       "type": "visualization",
-      "updated_at": "2018-10-02T18:17:44.034Z",
+      "updated_at": "2019-07-19T15:50:00.832Z",
       "version": 1
     },
     {
@@ -98,7 +98,7 @@
       },
       "id": "d712f650-e0eb-11e7-9c68-0b9a0f0c183c",
       "type": "dashboard",
-      "updated_at": "2018-10-02T18:17:44.034Z",
+      "updated_at": "2019-07-19T15:50:00.832Z",
       "version": 1
     }
   ],
