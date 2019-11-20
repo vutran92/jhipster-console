@@ -25,6 +25,7 @@ services:
             - jhipster-elasticsearch
         volumes:
            - /usr/share/logs/data:/usr/share/logstash/data
+        user: root
 
     jhipster-console:
         build: jhipster-console/
